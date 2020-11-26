@@ -8,15 +8,18 @@ namespace Bank
 {
     abstract class Account
     {
+        public int Id;
         public string AccountNumber;
         public decimal Balance;
         public string FirstName;
         public string LastName;
         public long Pesel;
-        public Account(string accountNumber, decimal balance, string firstName, string lastName, long pesel)
+
+        public Account(int id, string firstName, string lastName, long pesel)
         {
-            AccountNumber = accountNumber;
-            Balance = balance;
+            Id = id;
+            AccountNumber = generateAccountNumber(Id);
+            Balance = 0;
             FirstName = firstName;
             LastName = lastName;
             Pesel = pesel;
@@ -32,6 +35,11 @@ namespace Bank
         public string GetBalance()
         {
             return string.Format("{0} zł", Balance);
+        }
+
+        private string generateAccountNumber(int id)
+        {
+            return string.Format("94{0:D10}", id);
         }
     }
 }
