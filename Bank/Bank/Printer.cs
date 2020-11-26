@@ -8,7 +8,7 @@ namespace Bank
 {
     class Printer
     {
-        public void Print(SavingsAccount account)
+        public void Print(Account account)
         {
             Console.WriteLine("Dane konta:");
             Console.WriteLine("Numer konta: {0}", account.AccountNumber);

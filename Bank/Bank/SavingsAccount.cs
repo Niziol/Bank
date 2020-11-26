@@ -12,5 +12,10 @@ namespace Bank
             : base(accountNumber, balance, firstName, lastName, pesel)
         {
         }
+
+        public override string TypeName()
+        {
+            return "OSZCZĘDNOŚCIOWE";
+        }
     }
 }
