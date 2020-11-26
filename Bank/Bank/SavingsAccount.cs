@@ -8,7 +8,7 @@ namespace Bank
 {
     class SavingsAccount : Account
     {
-        public SavingsAccount (int id, string accountNumber, decimal balance, string firstName, string lastName, long pesel) 
+        public SavingsAccount (int id, string firstName, string lastName, long pesel) 
             : base(id, firstName, lastName, pesel)
         {
         }

@@ -19,7 +19,7 @@ namespace Bank
         {
             Id = id;
             AccountNumber = generateAccountNumber(Id);
-            Balance = 0;
+            Balance = 0.0M;
             FirstName = firstName;
             LastName = lastName;
             Pesel = pesel;
