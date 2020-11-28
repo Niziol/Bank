@@ -60,5 +60,17 @@ namespace Bank
         {
             return _accounts.Select(x => string.Format("Imię: {0} | Nazwisko: {1} | PESEL: {2}", x.FirstName, x.LastName, x.Pesel)).Distinct();
         }
+
+        public void CloseMonth()
+        {
+            foreach(SavingsAccount account in _accounts.Where(x => x is SavingsAccount))
+            {
+                account.AddInterest(0.04M);
+            }
+            foreach(BillingAccount account in _accounts.Where(x => x is BillingAccount))
+            {
+                account.TakeCharge(5.0M);
+            }
+        }
     }
 }
