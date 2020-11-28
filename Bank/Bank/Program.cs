@@ -10,6 +10,8 @@ namespace Bank
     {
         static void Main(string[] args)
         {
+            BankManager bankManager = new BankManager();
+            bankManager.Run();
         }
     }
 }
