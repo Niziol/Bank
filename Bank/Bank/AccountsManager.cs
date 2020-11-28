@@ -45,5 +45,20 @@ namespace Bank
             _accounts.Add(account);
             return account;
         }
+        
+        public IEnumerable<Account> GetAllAccountsFor(string firstName, string lastName, long pesel)
+        {
+            return _accounts.Where(x => x.FirstName == firstName && x.LastName == lastName && x.Pesel == pesel);
+        }
+
+        public Account GetAccount(string accountNumber)
+        {
+            return _accounts.Single(x => x.AccountNumber == accountNumber);
+        }
+
+        public IEnumerable<string> ListOfCustomers()
+        {
+            return _accounts.Select(x => string.Format("Imię: {0} | Nazwisko: {1} | PESEL: {2}", x.FirstName, x.LastName, x.Pesel)).Distinct();
+        }
     }
 }
