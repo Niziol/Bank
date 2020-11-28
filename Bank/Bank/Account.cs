@@ -37,6 +37,11 @@ namespace Bank
             return string.Format("{0} zł", Balance);
         }
 
+        public void ChangeBalance(decimal value)
+        {
+            Balance += value;
+        }
+
         private string generateAccountNumber(int id)
         {
             return string.Format("94{0:D10}", id);

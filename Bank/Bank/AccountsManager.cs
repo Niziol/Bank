@@ -72,5 +72,17 @@ namespace Bank
                 account.TakeCharge(5.0M);
             }
         }
+
+        public void AddMoney(string accountNumber, decimal value)
+        {
+            Account account = GetAccount(accountNumber);
+            account.ChangeBalance(value);
+        }
+
+        public void TakeMoney(string accountNumber, decimal value)
+        {
+            Account account = GetAccount(accountNumber);
+            account.ChangeBalance(-value);
+        }
     }
 }
